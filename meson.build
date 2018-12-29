@@ -1,6 +1,9 @@
 project('gainput', 'cpp')
 
-add_global_arguments('-Wall -Wpedantic -Wextra', language : 'cpp')
+add_global_arguments('-Wall', language : 'cpp')
+add_global_arguments('-Wpedantic', language : 'cpp')
+add_global_arguments('-Wextra', language : 'cpp')
+
 
 subdir('lib')
 
