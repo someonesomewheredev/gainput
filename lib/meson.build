@@ -111,14 +111,15 @@ if host_machine.system() == 'linux'
     dependencies += dependency('x11')
 elif host_machine.system() == 'windows'
     dependencies += dependency('xinput')
+    dependencies += dependency('ws2_32')
 endif
 
-if get_option('build_static')
+if get_option('gainput_build_static')
     gainput_static = static_library('gainput', sources: sources, dependencies: dependencies, include_directories: gainput_include)
     gainput = gainput_static
 endif
 
-if get_option('build_shared')
+if get_option('gainput_build_shared')
     gainput_shared = shared_library('gainput', sources: sources, dependencies: dependencies, include_directories: gainput_include)
     gainput = gainput_shared
 endif
