@@ -9,10 +9,10 @@ endif
 
 subdir('lib')
 
-if(get_option('samples'))
+if(get_option('gainput_samples'))
     subdir('samples')
 endif
 
-if(get_option('tests'))
+if(get_option('gainput_tests'))
     subdir('test')
 endif
