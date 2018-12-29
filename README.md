@@ -1,4 +1,4 @@
-Gainput [![Build Status](https://travis-ci.org/jkuhlmann/gainput.png?branch=master)](https://travis-ci.org/jkuhlmann/gainput) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+Gainput Meson [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 =======
 
 Gainput is the awesome C++ input library for your game:
@@ -10,7 +10,7 @@ Gainput is the awesome C++ input library for your game:
 - [Open Source (MIT license)](https://github.com/jkuhlmann/gainput/blob/master/LICENSE)
 - [complete list of features](#features)
 - [API documentation](http://gainput.johanneskuhlmann.de/api/)
-
+- now using the Meson build system
 
 Usage
 -----
@@ -76,12 +76,11 @@ Features
 Building
 --------
 
-By default, Gainput is built using [CMake](http://www.cmake.org/).
+In this fork, Gainput is built using [Meson](https://mesonbuild.com/).
 
-1. Run `mkdir build`
-1. Run `cmake ..`
-1. Run `make`
-1. The library can be found in `lib/`, the executables in `samples/`.
+1. Run `meson build`
+1. Run `cd build && ninja`
+1. The library can be found in `lib/`. Samples are currently not working.
 
 
 Contributing
