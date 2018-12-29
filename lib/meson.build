@@ -105,6 +105,22 @@ sources = [
     'include/gainput/recorder/GainputInputRecording.h'
 ]
 
-gainput = static_library('gainput', sources: sources, include_directories: gainput_include)
+dependencies = []
+
+if host_machine.system() == 'linux'
+    dependencies += dependency('x11')
+elif host_machine.system() == 'windows'
+    dependencies += dependency('xinput')
+endif
+
+if get_option('build_static')
+    gainput_static = static_library('gainput', sources: sources, dependencies: dependencies, include_directories: gainput_include)
+    gainput = gainput_static
+endif
+
+if get_option('build_shared')
+    gainput_shared = shared_library('gainput', sources: sources, dependencies: dependencies, include_directories: gainput_include)
+    gainput = gainput_shared
+endif
 
 gainput_dep = declare_dependency(include_directories: [gainput_include], link_with: gainput)

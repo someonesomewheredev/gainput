@@ -1,2 +1,4 @@
 option('samples', type: 'boolean', description: 'Build Samples for Gainput', value: false)
 option('tests', type: 'boolean', description: 'Build Tests for Gainput', value: false)
+option('build_shared', type: 'boolean', description: 'Build shared library for Gainput', value: false)
+option('build_static', type: 'boolean', description: 'Build static library for Gainput', value: true) 
