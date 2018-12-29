@@ -1,0 +1,2 @@
+option('samples', type: 'boolean', description: 'Build Samples for Gainput', value: false)
+option('tests', type: 'boolean', description: 'Build Tests for Gainput', value: false)
