@@ -1,6 +1,6 @@
 project('gainput', 'cpp')
 
-if meson.get_compiler('cpp').get_id() != 'msvc'
+if meson.get_compiler('cpp').get_id() != 'msvc' and not meson.is_subproject()
     add_global_arguments('-Wall', language : 'cpp')
     add_global_arguments('-Wpedantic', language : 'cpp')
     add_global_arguments('-Wextra', language : 'cpp')
